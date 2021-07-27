@@ -3,7 +3,7 @@
 ##### install:
 
 ```
-git clone
+git clone [nama repo]
 npm install
 composer install --optimize-autoloader --no-dev
 composer dump-autoload
@@ -11,6 +11,7 @@ copy .env.production .env
 
 ganti nama database di .env dengan yang sesuai
 
+Bikin dulu database nya misalkan nama database nya gull
 contoh:
 DB_CONNECTION=pgsql
 DB_HOST=localhost
@@ -21,6 +22,7 @@ DB_PORT=5432
 
 php artisan key:generate
 php artisan config:cache
+php artisan config:clear
 php artisan route:cache
 php artisan view:cache
 php artisan migrate
