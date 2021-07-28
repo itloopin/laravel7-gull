@@ -222,9 +222,7 @@ class KaryawanController extends Controller
     {
         $code = strtolower($request->code);
         $name = strtolower($request->name);
-        $dept = strtolower($request->dept);
-        $pos = strtolower($request->pos);
-        
+            
         $data=DB::table('karyawan')
         ->where('karyawan_id','ilike','%'.$code.'%')
         ->where('name','ilike','%'.$name.'%')  // string to lower

@@ -34,7 +34,7 @@
                             <select class="select2 w-100" id="dept" name="dept">
                                 <option label=""></option>
                                 @foreach($depts as $val)
-                                    <option value="{{$val->code}}">{{$val->code}} - {{$val->name}}</option>
+                                    <option value="{{$val->code}}" {{ $val->code == old("dept") ? "selected" : ""}}>{{$val->code}} - {{$val->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -45,7 +45,7 @@
                             <select class="select2 w-100" id="position" name="position">
                                 <option label=""></option>
                                 @foreach($positions as $val)
-                                    <option value="{{$val->code}}">{{$val->code}} - {{$val->name}}</option>
+                                    <option value="{{$val->code}}" {{ $val->code == old("position") ? "selected" : ""}}>{{$val->code}} - {{$val->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -90,9 +90,6 @@
         }
         }).settings.ignore = "";
 
-        $('#dept').val('{{ Request::old('dept') }}').trigger('change');
-        $('#position').val('{{ Request::old('position') }}').trigger('change');
-        
     });
 
     $("#cmdSave").click(function(){       

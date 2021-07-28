@@ -34,7 +34,7 @@
                             <select class="select2 w-100" id="dept" name="dept">
                                 <option label=""></option>
                                 @foreach($depts as $val)
-                                    <option value="{{$val->code}}">{{$val->code}} - {{$val->name}}</option>
+                                    <option value="{{$val->code}}" {{ $val->code == old("dept",$karyawan->department) ? "selected" : ""}}>{{$val->code}} - {{$val->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -45,7 +45,7 @@
                             <select class="select2 w-100" id="position" name="position">
                                 <option label=""></option>
                                 @foreach($positions as $val)
-                                    <option value="{{$val->code}}">{{$val->code}} - {{$val->name}}</option>
+                                    <option value="{{$val->code}}" {{ $val->code == old("position",$karyawan->job_position) ? "selected" : ""}} >{{$val->code}} - {{$val->name}}</option>
                                 @endforeach
                             </select>
                         </div>
@@ -91,9 +91,6 @@
             }
         }
         }).settings.ignore = "";
-
-        $('#dept').val('{{ Request::old('dept',$karyawan->department) }}').trigger('change');
-        $('#position').val('{{ Request::old('position',$karyawan->job_position) }}').trigger('change');
 
     });
 

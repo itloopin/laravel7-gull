@@ -87,7 +87,7 @@
                                     <div class="col-12 col-sm-6">
                                         <div class="form-group">
                                             <label for="account-company">Company</label>
-                                            <input type="text" class="form-control" id="company" name="company" placeholder="Company name" value="Crystal Technologies" disabled>
+                                            <input type="text" class="form-control" id="company" name="company" placeholder="Company name" value="PT. Akur Pratama" disabled>
                                         </div>
                                     </div>
                                 </div>
