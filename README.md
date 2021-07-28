@@ -1,5 +1,5 @@
-# laravel7-vuexy
-## Skeleton laravel 7 menggunakan vuexy
+# laravel7-gull
+## Skeleton laravel 7 menggunakan gull
 ##### install:
 
 ```
@@ -28,7 +28,7 @@ php artisan view:cache
 php artisan migrate
 php artisan db:seed
 user: admin
-pssword: admin
+password: admin
 
 ```
 
