@@ -76,7 +76,7 @@
     <script src="{{asset('app-assets/js/plugins/perfect-scrollbar.min.js')}}"></script>
     <script src="{{asset('app-assets/js/scripts/tooltip.script.min.js')}}"></script>
     <script src="{{asset('app-assets/js/scripts/script.min.js')}}"></script>
-    <script src="{{asset('app-assets/js/scripts/script_2.min.js')}}"></script>
+    <script src="{{asset('app-assets/js/scripts/script_2.js')}}"></script>
     <script src="{{asset('app-assets/js/scripts/sidebar.large.script.min.js')}}"></script>
     <script src="{{asset('app-assets/js/plugins/feather.min.js')}}"></script>
     <script src="{{asset('app-assets/js/plugins/metisMenu.min.js')}}"></script>
