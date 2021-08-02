@@ -6,7 +6,7 @@
   <!--  user -->
   <div class="scroll-nav ps ps--active-y" data-perfect-scrollbar="data-perfect-scrollbar" data-suppress-scroll-x="true">
       <div class="side-nav">
-          <div class="main-menu">
+          <div class="main-index">
               <ul class="metismenu" id="menu">
                   <li class="Ul_li--hover">
                     <a href="{{ route('home') }}">
@@ -20,7 +20,7 @@
                       <span class="item-name text-15 text-muted">Master Data</span>
                     </a>
                     <ul class="mm-collapse">
-                        @can('karyawan-menu')
+                        @can('karyawan-index')
                         <li class="item-name">
                           <a href="{{ route('karyawan.index') }}">
                             <i class="nav-icon i-Circular-Point"></i>
@@ -36,7 +36,7 @@
                       <span class="item-name text-15 text-muted">Settings</span>
                     </a>
                     <ul class="mm-collapse">
-                        @can('user-list')
+                        @can('user-index')
                         <li class="item-name">
                           <a href="{{ route('users.index') }}">
                             <i class="nav-icon i-Circular-Point"></i>
@@ -44,7 +44,7 @@
                           </a>
                         </li>
                         @endcan
-                        @can('permission-list')
+                        @can('permission-index')
                         <li class="item-name">
                           <a href="{{ route('permissions.index') }}">
                             <i class="nav-icon i-Circular-Point"></i>
@@ -52,7 +52,7 @@
                           </a>
                         </li>
                         @endcan
-                        @can('role-list')
+                        @can('role-index')
                         <li class="item-name">
                           <a href="{{ route('roles.index') }}">
                             <i class="nav-icon i-Circular-Point"></i>

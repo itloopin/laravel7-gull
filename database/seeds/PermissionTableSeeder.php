@@ -14,7 +14,7 @@ class PermissionTableSeeder extends Seeder
     {
        $permissions = [
             [
-                'name' => 'role-menu',
+                'name' => 'role-index',
                 'group_name' => 'role',
                 'display_name' => 'Menu Role',
                 'description' => 'Menu of Role'
@@ -45,7 +45,7 @@ class PermissionTableSeeder extends Seeder
             ],
 
             [
-                'name' => 'user-menu',
+                'name' => 'user-index',
                 'group_name' => 'user',
                 'display_name' => 'Menu User',
                 'description' => 'Menu of User'
@@ -77,7 +77,7 @@ class PermissionTableSeeder extends Seeder
             ],
 
             [
-                'name' => 'permission-menu',
+                'name' => 'permission-index',
                 'group_name' => 'permission',
                 'display_name' => 'Menu Permission',
                 'description' => 'Menu of Permission'
@@ -109,7 +109,7 @@ class PermissionTableSeeder extends Seeder
             ],
 
             [
-                'name' => 'log-menu',
+                'name' => 'log-index',
                 'group_name' => 'log',
                 'display_name' => 'Menu Log',
                 'description' => 'Menu of Log'
@@ -141,7 +141,7 @@ class PermissionTableSeeder extends Seeder
             ],
 
             [
-                'name' => 'karyawan-menu',
+                'name' => 'karyawan-index',
                 'group_name' => 'karyawan',
                 'display_name' => 'Menu karyawan',
                 'description' => 'Menu of karyawan'
