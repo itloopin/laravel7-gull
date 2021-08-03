@@ -1,12 +1,13 @@
 <div class="sidebar-panel bg-white">
-  <div class="gull-brand pr-3 text-center mt-4 mb-2 d-flex justify-content-center align-items-center"><img class="pl-3" src="{{asset('app-assets/images/logo.png')}}" alt="alt" />
-      <!--  <span class=" item-name text-20 text-primary font-weight-700">GULL</span> -->
+  <div class="gull-brand pr-3 text-center mt-4 mb-2 d-flex justify-content-center align-items-center">
+      <img class="pl-3" src="{{asset('app-assets/images/logo.png')}}" alt="alt" />
+      <span class=" item-name text-20 text-primary font-weight-700">Set Disc</span>
       <div class="sidebar-compact-switch ml-auto"><span></span></div>
   </div>
   <!--  user -->
   <div class="scroll-nav ps ps--active-y" data-perfect-scrollbar="data-perfect-scrollbar" data-suppress-scroll-x="true">
       <div class="side-nav">
-          <div class="main-index">
+          <div class="main-menu">
               <ul class="metismenu" id="menu">
                   <li class="Ul_li--hover">
                     <a href="{{ route('home') }}">
@@ -20,7 +21,7 @@
                       <span class="item-name text-15 text-muted">Master Data</span>
                     </a>
                     <ul class="mm-collapse">
-                        @can('karyawan-index')
+                        @can('karyawan-menu')
                         <li class="item-name">
                           <a href="{{ route('karyawan.index') }}">
                             <i class="nav-icon i-Circular-Point"></i>
@@ -36,7 +37,7 @@
                       <span class="item-name text-15 text-muted">Settings</span>
                     </a>
                     <ul class="mm-collapse">
-                        @can('user-index')
+                        @can('user-list')
                         <li class="item-name">
                           <a href="{{ route('users.index') }}">
                             <i class="nav-icon i-Circular-Point"></i>
@@ -44,7 +45,7 @@
                           </a>
                         </li>
                         @endcan
-                        @can('permission-index')
+                        @can('permission-list')
                         <li class="item-name">
                           <a href="{{ route('permissions.index') }}">
                             <i class="nav-icon i-Circular-Point"></i>
@@ -52,7 +53,7 @@
                           </a>
                         </li>
                         @endcan
-                        @can('role-index')
+                        @can('role-list')
                         <li class="item-name">
                           <a href="{{ route('roles.index') }}">
                             <i class="nav-icon i-Circular-Point"></i>

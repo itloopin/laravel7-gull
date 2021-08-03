@@ -169,9 +169,10 @@ class UserController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function destroy($id)
+    public function delete(Request $request)
     {
         \LogActivity::addToLog('User Delete data');
+        $id=$request->userid;
         User::find($id)->delete();
         return redirect()->route('users.index')
                         ->with('success','User deleted successfully');

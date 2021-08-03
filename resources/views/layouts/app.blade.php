@@ -38,6 +38,7 @@
     <link href="{{asset('assets/fonts/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css" >
     <link href="{{asset('assets/css/extensions/jstree.min.css')}}" rel="stylesheet" />
     <link href="{{asset('app-assets/css/plugins/extensions/ext-component-tree.min.css')}}" rel="stylesheet" type="text/css" >
+    <link href="{{asset('app-assets/css/plugins/dropzone.min.css')}}" rel="stylesheet"/>
         
     <style>
         /* kalo udah di select jangan keluar lagi di list options */
@@ -48,6 +49,11 @@
             overflow:auto;
         }
         th, td { white-space: nowrap; }
+
+        .gull-brand img {
+            width: 100px;
+            margin-right: 5px; 
+        }
 
     </style>
     @yield('styles')
@@ -87,7 +93,8 @@
     <script src="{{asset('assets/js/extensions/sweetalert2.all.min.js')}}"></script>
     <script src="{{asset('app-assets/js/scripts/extensions/ext-component-tree.min.js')}}"></script>
     <script src="{{asset('assets/js/extensions/jstree.min.js')}}"></script>
-    
+
+    <script src="{{asset('app-assets/js/plugins/dropzone.min.js')}}"></script>
             
     <script type="text/javascript">
       

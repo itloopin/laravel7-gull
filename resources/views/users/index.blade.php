@@ -58,21 +58,24 @@
 <script type="text/javascript">
 
   function validasidelete(userid){
-     Swal.fire({
-        title: "Yakin akan di hapus?",
-        text: "ID "+userid+" Akan dihapus",
-        icon: "warning",
-        showCancelButton: true,
-        confirmButtonClass: "btn-danger",
-        confirmButtonText: "Hapus",
-        closeOnConfirm: false
-    } ,
-    function(){
-        $.ajax({
+
+    Swal.fire({
+      title: "Yakin akan di hapus?",
+      text: "ID "+userid+" Akan dihapus",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          $.ajax({
           dataType: 'json',
           type:'DELETE',
           url: "{{route('users.delete')}}",
-          data:{userid:userid},
+          data:{
+            userid:userid
+          },
           success: function(data) {
               //  Swal.fire("UPDATED!", "Generate data berhasil", "success");
               tampildata('');
@@ -82,9 +85,9 @@
               tampildata('');
           }
         });
-         Swal.fire("DELETED!", "Hapus data berhasil", "success");
-      });
-      //return confirm("Do you want to delete this item?"); 
+        Swal.fire("DELETED!", "Hapus data berhasil", "success");
+        }
+    })
   }
 
 	$("#btnSearch").click(function(e){

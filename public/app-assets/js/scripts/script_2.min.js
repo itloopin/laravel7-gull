@@ -14,11 +14,15 @@ $(document).ready(function () {
   var $mobileMenu = $(".mobile-menu-icon");
   var $mobileMenuCollapse = $(".switch-overlay"); // mobile-menu
 
+  $mobileMenuCollapse.hide();
+
   $mobileMenu.on("click", function () {
     mobileMenuClick();
+    $mobileMenuCollapse.show();
   });
   $mobileMenuCollapse.on("click", function () {
     sidebarSwitchOverlay();
+    $mobileMenuCollapse.hide();
   });
 
   function mobileMenuClick() {
