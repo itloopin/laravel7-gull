@@ -12,11 +12,16 @@
 		<i class="i-Checkout-Basket mobile-hide mr-3 text-20 cursor-pointer" data-toggle="tooltip" data-placement="top" title="" data-original-title="Calendar"></i> --}}
 		<!-- Full screen toggle-->
 		<i class="i-Full-Screen header-icon d-none d-sm-inline-block" data-fullscreen=""></i>
+		
 	</div>
 	<div class="header-part-right">
 		
 		<!-- Grid menu Dropdown-->
 		<div class="dropdown dropleft">
+			@if (session()->has('siteCode'))
+				<span class="date font-montserrat text-uppercase bold">{{ Session::get('siteCode') }} - {{ Session::get('siteName') }}</span>
+				<input type="text" id = "namaToko" value="{{ Session::get('siteCode') }}" hidden>
+	  		@endif
 			<i><span class="font-weight-bolder">{{ strtoupper(Auth::user()->name) }}</span></i>
 			<i class="text-muted header-icon" id="dropdownMenuButton" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<img src="{{ asset(Auth::user()->filename) }}"

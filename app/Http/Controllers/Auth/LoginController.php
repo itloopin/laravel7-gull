@@ -7,6 +7,7 @@ use Carbon\Carbon;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use DB;
 
 class LoginController extends Controller
 {
@@ -55,7 +56,12 @@ class LoginController extends Controller
 
     function authenticated(Request $request, $user)
     {   
-        \LogActivity::addToLog('Login');
+        $site_code=$request->site_code;
+        $sites =DB::table('sites')->where('site_code',$site_code)->first();
+        $request->session()->put('siteCode', $sites->site_code);
+        $request->session()->put('siteName', $sites->name);
+
+        \LogActivity::addToLog('Login',"Site Code: $site_code");
         $user->update([
             'last_login_at' => Carbon::now()->toDateTimeString(),
             'last_login_ip' => $request->getClientIp()

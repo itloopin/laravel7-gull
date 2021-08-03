@@ -27,13 +27,14 @@
 
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" />
     <link href="{{asset('app-assets/css/themes/lite-purple.min.css')}}" rel="stylesheet">
+
     <style>
         .auth-layout-wrap .auth-content {
             min-width: 400px;
         }
     </style> 
 </head>
-
+<body>
 <div class="auth-layout-wrap" style="background-image: url('{{asset('app-assets/images/photo-wide-4.jpg')}}')">
     <div class="auth-content">
         <div class="card o-hidden">
@@ -51,7 +52,6 @@
                                     value="{{ old('username') }}" placeholder="username"
                                     aria-describedby="username" tabindex="1" autofocus />
                             </div>
-
                             <div class="form-group">
                                 <label for="password" class="form-label">Password</label>
                                 <div class="input-group input-group-merge form-password-toggle">
@@ -61,6 +61,13 @@
                                         aria-describedby="password" />
                                 </div>
                             </div>
+                            <div class="form-group">
+                                <label class="form-label" for="site_code">Store</label>
+                                <select class="select2 w-100 form-control" id="site_code" name="site_code">
+                                    <option label=""></option>
+                                </select>
+                            </div>
+                            
                             @if($errors->any())
                             @foreach ($errors->all() as $error)
                             <h5>{{ $error }}</h5>
@@ -79,3 +86,47 @@
         </div>
     </div>
 </div>
+
+<script src="{{asset('app-assets/js/plugins/jquery-3.3.1.min.js')}}"></script>
+<script src="{{asset('app-assets/js/plugins/forms/jquery.validate.min.js')}}"></script>
+<script type="text/javascript">
+    
+    $( document ).ready(function() {
+      $("#username").focus();
+      if ($("#username").val()){
+        getCabang($("#username").val());
+      }
+    });
+
+    $(function(){
+      $('#form-login').validate();
+    });
+
+    function getCabang(value){
+      $.ajax({
+        url:"{{route('get.store')}}",
+        method:"POST",
+        data:{
+          value:value
+        },
+        success:function(result){
+          $('#site_code').html(result);
+        }
+      })
+    }
+
+    $("#username").keyup(function() {
+      let value = $(this).val();
+      getCabang(value);
+    })
+
+    $.ajaxSetup({
+        headers: {
+            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+        }
+    });
+    
+</script>
+
+</body>
+</html>

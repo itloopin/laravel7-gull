@@ -11,6 +11,7 @@
 |
 */
 
+Route::post('get/store',array('as'=>'get.store','uses'=>'StoreController@getStore'));
 
 // Route::auth();
 Auth::routes();
